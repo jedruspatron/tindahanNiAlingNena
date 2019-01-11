@@ -1,1 +1,1 @@
-<link rel="stylesheet" type="text/css" href="../assets/ script.js">
+<script type="text/javascript" src="../assets/js/script.js"></script>

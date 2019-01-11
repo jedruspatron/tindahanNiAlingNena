@@ -1,19 +1,24 @@
 <?php
 
 session_start();
-require"./connect.php";
+require_once "./connect.php";
 
-$username = $_POST['userName'];
+$username = $_POST['username'];
 $password = ($_POST['password']);
 
-$sql = "SELECT * FROM users WHERE username ='$username' AND password ='$password'";
+$sql = "SELECT * FROM users WHERE username = '$username'";
 $result = mysqli_query($conn, $sql);
+$user_info = mysqli_fetch_assoc($result);
 
-if (mysqli_num_rows($result) > 0) {
-	$_SESSION['logged_in_user'] = $username;
+//this compares a non hashed password to the hashed value stored in the database
+
+if(!password_verify($password, $user_info['password'])) {
+	die("login_failed");
 } else {
-	$_SESSION['error_message'] = "Login Failed";
+	$_SESSION['user'] = $user_info;
 }
-header('location: ../views/index.php');
+
+echo "login_success";
+mysqli_close($conn);
 
 ?>
