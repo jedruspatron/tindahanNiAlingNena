@@ -225,6 +225,11 @@ $(document).on("click", ".item-remove", (e) => {
 	});
 });
 
+//submit_profile_form
+$('#update_info').click(() => {
+	alert('updated');
+	$('#update_user_details').submit();
+})
 
 
 
