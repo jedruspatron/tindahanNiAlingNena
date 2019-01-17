@@ -1,5 +1,6 @@
 <?php require_once "../partials/layout.php"; ?>
-<?php function get_page_content(){
+<?php function get_page_content() {
+if(isset($_SESSION['user'])) {
 	global $conn;
  ?>
 <?php $user = $_SESSION['user']; ?>
@@ -84,4 +85,8 @@
 			</div>
 		</div>
 	</div>
+
+<?php } else {
+	header('Location:./error.php');
+} ?> 
 <?php } ?>

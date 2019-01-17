@@ -1,6 +1,7 @@
 <?php require_once '../partials/layout.php'; ?>
 
 <?php function get_page_content() { 
+if(isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 2) { 
 	global $conn;
 ?>
 
@@ -87,6 +88,12 @@
 	</div> 
 	<!-- end of container -->
 </form>
+
+<?php } elseif (isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 1) {
+	header('Location:./error.php');
+} else { 
+	header('Location:./login.php');
+} ?>
 
 
 <?php } ?>

@@ -8,6 +8,7 @@
 	$lastname = $_POST['lastname'];
 	$email = $_POST['email'];
 	$address = $_POST['address'];
+	$role = 2;
 
 	// retrieve only the data under the username
 	// has the same value as the username variable
@@ -19,7 +20,7 @@
 	} else {
 
 
-	$sql_insert = "INSERT INTO users(username, password, firstname, lastname, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$email', '$address');";
+	$sql_insert = "INSERT INTO users(username, password, firstname, lastname, email, address, roles_id) VALUES ('$username', '$password', '$firstname', '$lastname', '$email', '$address', '$role');";
 	$result = mysqli_query($conn, $sql_insert);
 
 	}
