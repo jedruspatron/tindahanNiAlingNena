@@ -78,6 +78,10 @@
 					</li>
 
 					<li class="nav-item">
+						<a class="nav-link"  href="../views/orders.php"> ORDERS </a>
+					</li>
+
+					<li class="nav-item">
 						<a class="nav-link" href="../controllers/logout.php"> LOG OUT </a>
 					</li>	
 
