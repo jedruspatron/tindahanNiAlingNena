@@ -165,8 +165,8 @@ try {
 
     $redirectUrls = new RedirectUrls();
     $redirectUrls
-        ->setReturnUrl('http://192.168.10.28/batch19/tindahanNiAlingNena/app/controllers/pay.php?success=true')
-        ->setCancelUrl('http://192.168.10.28/batch19/tindahanNiAlingNena/app/controllers/pay.php?success=false');
+        ->setReturnUrl('https://tindahannialingnena.herokuapp.com/app/controllers/pay.php?success=true')
+        ->setCancelUrl('https://tindahannialingnena.herokuapp.com/app/controllers/pay.php?success=false');
 
     $payment = new Payment();
     $payment->setIntent('sale')
